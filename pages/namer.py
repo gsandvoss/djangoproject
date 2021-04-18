@@ -1,2 +1,2 @@
 def namer():
-	return "My name is Glenn Sandvoss"
+	return "TIGSe: Buddhhist Art Resource"
