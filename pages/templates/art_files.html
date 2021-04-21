@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Art Files {% endblock %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">	
+		{% if art_files %}
+			{% for records in art_files %}
+				<div class="col-sm">
+					<div class="card" style="width: 18rem;">
+					
+					  <div>
+					  <img class="card-img-top" src= "..." > {{ records.diety_image }} </div>
+					  <div class="card-body">
+					    <h5 class="card-title">{{ records.diety_name }}</h5>
+					    <p class="card-text">{{ records.file_name }}</br>
+					    				     {{ records.file_size }}</br>
+
+
+					    </p>
+					    <a href="#" class="btn btn-secondary">Download</a>
+					  </div>
+					</div>
+				</div>
+
+		{% endfor %}
+	{% endif %}
+	</div>				
+</div>
+{% endblock %}
+
