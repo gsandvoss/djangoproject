@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %} Art Files {% endblock %}
 
 
@@ -12,7 +14,9 @@
 					<div class="card" style="width: 18rem;">
 					
 					  <div>
-					  <img class="card-img-top" src= "..." > {{ records.diety_image }} </div>
+					  <img class="card-img-top" src= "{% static 'images/' %}{{records.diety_image}}" alt = "{{ records.diety_name }}"> 
+					  </div>
+
 					  <div class="card-body">
 					    <h5 class="card-title">{{ records.diety_name }}</h5>
 					    <p class="card-text">{{ records.file_name }}</br>
@@ -30,4 +34,3 @@
 	</div>				
 </div>
 {% endblock %}
-

@@ -1,4 +1,6 @@
 from django.db import models
+	
+
 
 class Files(models.Model):
 	diety_name = models.CharField(max_length=200)
