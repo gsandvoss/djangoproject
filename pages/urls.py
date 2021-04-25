@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from django.conf import settings
 
 
 urlpatterns = [
@@ -14,5 +14,4 @@ urlpatterns = [
 	path('images/', views.download_file, name = 'download'),
 
 
-
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
