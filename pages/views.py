@@ -24,8 +24,6 @@ def files(request):
 
 def download_file(request):
     # fill these variables with real value
-
-
     fl_path = "static/images"
     filename = "Sitting_Buddha.svg"
     fl = open(fl_path, 'r')
@@ -36,9 +34,6 @@ def download_file(request):
 
 
 def download(request, path):
-
-
-
 
     file_path = os.path.join(settings.MEDIA_ROOT, path)
     if os.path.exists(file_path):
