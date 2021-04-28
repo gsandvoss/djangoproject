@@ -24,12 +24,14 @@ def files(request):
 
 def download_file(request):
     # fill these variables with real value
-    fl_path = "static/images"
+    path = "/downloads"
+    os.chmod("downloads/Sitting_Buddha.svg", 0o777)
+    fl_path = ("/downloads")
     filename = "Sitting_Buddha.svg"
-    fl = open(fl_path, 'r')
+    fl = open(fl_path, 'w')
     mime_type, _ = mimetypes.guess_type(fl_path)
     response = HttpResponse(fl, content_type=mime_type)
-    response['Content-Disposition'] = "attachment; filename=%s - %s.svg" (filename)
+    response['Content-Disposition'] = "attachment; filename=%s * %s"
     return response
 
 
