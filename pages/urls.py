@@ -11,8 +11,10 @@ urlpatterns = [
 	path('about/', views.about, name = 'about'),
 	path('contact/', views.contact, name = 'contact'),
 	path('art_files/', views.files, name = 'art files'),
-	path('static', views.download_file, name = 'download'),
+	path( 'url', views.download_file, name = 'download'),
 
 
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
