@@ -27,16 +27,22 @@ def files(request):
 
 
 
-def download_file(request):
-	buffer = io.BytesIO()
-	path="art_files/images"
-	file_path = os.path.join(settings.STATIC_ROOT,path)
-	if os.path.exists(file_path):
-		with open(file_path, 'rb') as fh:
-			response = HttpResponse(fh.read(), content_type=mime_type)
-			response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
-	return FileResponse(buffer, as_attachment=True, filename='Chenrezig_Grid.svg')
+#def download_file(request):
+#	path="art_files/images"
+#	buffer = io.BytesIO()
+#	file_path = os.path.join(settings.STATIC_ROOT,path)
+#	if os.path.exists(file_path):
+#		with open(file_path, 'rb') as fh:
+#			response = HttpResponse(fh.read(), content_type=mime_type)
+#			response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
+#	return FileResponse(buffer, as_attachment=True, filename='Chenrezig_Grid.svg')
 
+
+def download_file(request):
+	path_01="c:/code/djangoproject/art_files/images/Chenrezig_Grid.svg"
+	path_02 = os.path.join(path_01)
+	get_file = open(path_02, 'rb')
+	return FileResponse(get_file, as_attachment=True)
 
 
 
